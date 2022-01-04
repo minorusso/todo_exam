@@ -8,7 +8,10 @@
   <tr>
     <td><%= task.title %></td>
     <td><%= task.details %></td>
+    <td><%= link_to "確認する", task_path(task.id) %></td>
+    <td><%= link_to "編集する", edit_task_path(task.id)%></td>
+    <td><%= link_to "削除する", task_path(task.id),method: :delete ,data: { confirm: '本当に削除していいですか？' } %></td>
   </tr>
 <% end %>
 </table>
-<p>Find me in app/views/tasks/show.html.erb</p>
+<%= link_to '新しくタスクを書く', new_task_path %> 
